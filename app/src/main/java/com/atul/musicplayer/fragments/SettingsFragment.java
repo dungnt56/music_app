@@ -105,28 +105,10 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.auto_chip).setOnClickListener(this);
         view.findViewById(R.id.review_options).setOnClickListener(this);
 
-        setUpOptions();
+//        setUpOptions();
 
         return view;
 
-    }
-
-
-    private void setUpOptions() {
-        toolbar.setOnMenuItemClickListener(item -> {
-            int id = item.getItemId();
-
-            if (id == R.id.github) {
-                startActivity(new Intent(
-                        Intent.ACTION_VIEW,
-                        Uri.parse(MPConstants.GITHUB_REPO_URL)
-                ));
-                return true;
-            }
-
-            return false;
-        });
-        toolbar.setNavigationOnClickListener(v -> requireActivity().finish());
     }
 
     private void setCurrentThemeMode() {
